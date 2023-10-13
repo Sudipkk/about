@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&family=Open+Sans:wght@600&family=Poppins:ital,wght@0,200;0,300;0,400;1,500&family=Recursive:wght@500;600&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <label class="logo"><a href="index.html">I Dont Know</a></label>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container1">
+            <div class="left">
+                <p>
+                    Hi My Name Is <span class="name">Sudip</span>
+                </p>
+                <span id="element"></span>
+            </div>
+            <div class="right">
+                <img src="https://i.pinimg.com/originals/fb/6d/34/fb6d3458fa64ba2f8ad176e761ae7fd9.jpg" alt="image">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container2">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Message Me</h3>
+                <input type="text" placeholder="Name" id="name" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="text" placeholder="Phone No." id="phone" required>
+                <textarea id="message" rows="10" placeholder="Enter Message"></textarea>
+                <button type="submit" id="btn">Submit</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="container3">
+            <div class="left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                    alt="insta" class="insta" width="100px">
+                <p>Follow Me In <br> <a href="https://www.instagram.com/idk__9_/">Instagram</a></p>
+            </div>
+            <div class="right">
+                <img src="https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg"
+                    alt="twitter" class="twitter" width="100px">
+                <p>Follow Me In <br><a href="https://twitter.com/IDK_Sudip0_0">Twitter</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Reserved By I Dont Know</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Just An Average Boring Guy', 'Not Good In Sports And Academics', 'Introvert,Dumb Head And Boring'],
+            typeSpeed: 50,
+        });
+    </script>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+            var body = 'name: ' + name + '<br/> email: ' + email + '<br/> phone: ' + phone + '<br/> message: ' + message
+
+
+            Email.send({
+                SecureToken: "d3f68aba-f889-48cd-9262-a924f22eb192",
+                To: 'sudipgamers839@gmail.com',
+                From: "oniichanmessage@gmail.com",
+                Subject: "contact message",
+                Body: body
+            }).then(
+                message => alert(message)
+            );
+        })
+    </script>
+
+</body>
+
+</html>
